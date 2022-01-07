@@ -49,3 +49,6 @@
 - Book Details Page
   - [] link to Catalog - "Back to Catalog"
   - [] details of correct book rendering
+
+
+{} string in
