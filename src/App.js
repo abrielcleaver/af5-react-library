@@ -3,31 +3,29 @@ import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import BookList from './views/Books/BookList';
-import Home from './views/Home';
+// import Home from './views/Home';
 
 function App() {
   // TODO: Add routes to books & views
   return (
-    <main className="container">
-      <BrowserRouter>
-        <header>
-          <NavLink to="/" data-testid="main-link">
-            Home
-          </NavLink>
-          <NavLink to="/books" data-testid="books-link">
-            Books
-          </NavLink>
-        </header>
+    <BrowserRouter>
+      <main className="container">
+        <header>Library Catalog</header>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <h2>Welcome to Dangalf&apos;s Library of Computer Science</h2>
+            <p>
+              Check out the amazing selection of books in our <NavLink to="/books">catalog</NavLink>
+              .
+            </p>
           </Route>
-          <Route exact path="/books">
-            <BookList />
-          </Route>
+          <Route exact path="/books" component={BookList} />
+          {/* <BookList />
+          </Route> */}
+          <Route exact path="/books/:id"></Route>
         </Switch>
-      </BrowserRouter>
-    </main>
+      </main>
+    </BrowserRouter>
   );
 }
 
